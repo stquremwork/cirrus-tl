@@ -1,3 +1,10 @@
+<div align="center">
+  <i>Если вам нравится этот проект, поддержите его разработку!</i>
+</div>
+
+<br>
+
+
 <a id="screenshots"></a>
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SCREENSHOTS" width="450"/>
@@ -29,9 +36,3 @@
     <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
   </a>
 </p>
-
-<div align="center">
-  <i>Если вам нравится этот проект, поддержите его разработку!</i>
-</div>
-
-<br>
