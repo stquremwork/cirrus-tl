@@ -11,8 +11,6 @@
 
 <i>If you like this project, consider supporting its development!</i>
 
-<br><br>
-
 <a href="https://ko-fi.com/J3J8KWTF">
   <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
 </a>
