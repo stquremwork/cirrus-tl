@@ -3,7 +3,6 @@
 <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
 <a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
 <a href="#keyboards"><kbd> <br> Functions <br> </kbd></a>&ensp;&ensp;
-<a href="#updates"><kbd> <br> Updates <br> </kbd></a>&ensp;&ensp;
 <a href="https://t.me/+OxKQy7Y6XWxjOTQ9"><kbd> <br> Telegram <br> </kbd></a>
 
 <br><br>
