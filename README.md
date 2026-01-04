@@ -2,6 +2,12 @@
   <i>Если вам нравится этот проект, поддержите его разработку!</i>
 </div>
 
+<p align="center">
+  <a href="https://ko-fi.com/J3J8KWTF">
+    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
+  </a>
+</p>
+
 <br>
 
 
@@ -31,8 +37,4 @@
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SUPPORT" width="450"/>
 
-<p align="center">
-  <a href="https://ko-fi.com/J3J8KWTF">
-    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
-  </a>
-</p>
+
