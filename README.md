@@ -1,24 +1,25 @@
 <div align="center">
-  <i>Если вам нравится этот проект, поддержите его разработку!</i>
-</div>
 
-<p align="center">
-  <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
-<a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
-<a href="#keyboards"><kbd> <br> keyboard Shortcuts <br> </kbd></a>&ensp;&ensp;
+<a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
+<a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
+<a href="#keyboards"><kbd> <br> Keyboard Shortcuts <br> </kbd></a>&ensp;&ensp;
 <a href="#updates"><kbd> <br> Updates <br> </kbd></a>&ensp;&ensp;
-<a href="#contrib"><kbd> <br> Contrubution <br> </kbd></a>&ensp;&ensp;
+<a href="#contrib"><kbd> <br> Contribution <br> </kbd></a>&ensp;&ensp;
 <a href="https://t.me/+OxKQy7Y6XWxjOTQ9"><kbd> <br> Telegram <br> </kbd></a>
 
-  <a href="https://ko-fi.com/J3J8KWTF">
-    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
-  </a>
-</p>
+<br><br>
+
+<i>If you like this project, consider supporting its development!</i>
+
+<br><br>
+
+<a href="https://ko-fi.com/J3J8KWTF">
+  <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
+</a>
+
+</div>
 
 <br>
-
-
-
 
 <a id="screenshots"></a>
 
@@ -46,4 +47,14 @@
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SUPPORT" width="450"/>
 
+<p align="center">
+  <a href="https://ko-fi.com/J3J8KWTF">
+    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
+  </a>
+</p>
 
+<div align="center">
+  <i>Your support helps keep this project alive and updated!</i>
+</div>
+
+<br>
