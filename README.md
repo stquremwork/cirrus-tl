@@ -38,6 +38,8 @@
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=CONFIGURATION" width="450"/>
 
+[![Star History Chart](https://api.star-history.com/svg?repos=Significant-Gravitas/AutoGPT,madushadhanushka/github-readme&type=Date)](https://www.star-history.com/#Significant-Gravitas/AutoGPT&madushadhanushka/github-readme&Date)
+
 *(Инструкция по конфигурации вашего проекта)*
 
 <br>
