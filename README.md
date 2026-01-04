@@ -2,7 +2,7 @@
 
 <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
 <a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
-<a href="#functions"><kbd> <br> Functions <br> </kbd></a>&ensp;&ensp;
+<a href="#features"><kbd> <br> Features <br> </kbd></a>&ensp;&ensp;
 <a href="https://t.me/+OxKQy7Y6XWxjOTQ9"><kbd> <br> Telegram <br> </kbd></a>
 
 <br><br>
