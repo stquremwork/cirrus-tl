@@ -49,6 +49,14 @@
 ![GitHub Downloads](https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/total?style=flat-square&label=Total%20Downloads&logo=github)
 ![Latest Release Downloads](https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/latest/total?style=flat-square&label=Latest%20Release&logo=github)
 
+*(Инструкция по конфигурации вашего проекта)*
+
+<br>
+
+---
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=PROJECT+STATISTICS" width="450"/>
+
 <picture>
   <source
     srcset="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=dark"
@@ -63,7 +71,5 @@
     alt="Star History Chart"
   />
 </picture>
-
-*(Инструкция по конфигурации вашего проекта)*
 
 <br>
