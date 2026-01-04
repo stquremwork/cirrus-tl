@@ -59,15 +59,15 @@
 
 <picture>
   <source
-    srcset="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=dark"
+    srcset="https://api.star-history.com/svg?repos=cirrus-tl&type=Date&theme=dark"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=light" 
+    srcset="https://api.star-history.com/svg?repos=cirrus-tl&type=Date&theme=light" 
     media="(prefers-color-scheme: light)"
   />
   <img
-    src="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=light"
+    src="https://api.star-history.com/svg?repos=cirrus-tl&type=Date&theme=light"
     alt="Star History Chart"
   />
 </picture>
