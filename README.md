@@ -62,26 +62,19 @@
 <div align="center">
 
 <!-- НУЖНО ДОБАВИТЬ: ваша аватарка (замените YOUR_USER_ID) -->
-<img src="https://avatars.githubusercontent.com/u/YOUR_USER_ID?v=4" width="80" style="border-radius: 50%; margin-bottom: 15px; border: 2px solid #9370DB;">
+---
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=PROJECT+STATISTICS" width="450"/>
+
+<div align="center">
+
+<!-- Ваша аватарка -->
+<img src="https://avatars.githubusercontent.com/u/ВАШ_ID?v=4" width="80" style="border-radius: 50%; margin-bottom: 15px; border: 2px solid #9370DB;">
 
 <br>
 
-<!-- НУЖНО ИСПРАВИТЬ: укажите полный путь к репозиторию -->
-<picture>
-  <source
-    srcset="https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ&type=Date&theme=dark"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ&type=Date&theme=light" 
-    media="(prefers-color-scheme: light)"
-  />
-  <img
-    src="https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ&type=Date&theme=light"
-    alt="Star History Chart"
-    style="border-radius: 10px;"
-  />
-</picture>
+<!-- График с темной темой -->
+[![Star History Chart](https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ_РЕПО&type=Date&theme=dark)](https://star-history.com/#cirrus-tl/НАЗВАНИЕ_РЕПО&Date)
 
 </div>
 
