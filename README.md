@@ -10,6 +10,7 @@
 <br><br>
 
 <i>If you like this project, consider supporting its development!</i>
+<i>Your support helps keep this project alive and updated!</i>
 
 <a href="https://ko-fi.com/J3J8KWTF">
   <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
@@ -44,15 +45,5 @@
 <br>
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SUPPORT" width="450"/>
-
-<p align="center">
-  <a href="https://ko-fi.com/J3J8KWTF">
-    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
-  </a>
-</p>
-
-<div align="center">
-  <i>Your support helps keep this project alive and updated!</i>
-</div>
 
 <br>
