@@ -1,16 +1,37 @@
+<a id="screenshots"></a>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SCREENSHOTS" width="450"/>
+
+*(Место для ваших скриншотов)*
+
+<br>
+
+<a id="features"></a>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=FEATURES" width="450"/>
+
+*(Список функций вашего проекта)*
+
+<br>
+
+<a id="config"></a>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=CONFIGURATION" width="450"/>
+
+*(Инструкция по конфигурации вашего проекта)*
+
+<br>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SUPPORT" width="450"/>
+
+<p align="center">
+  <a href="https://ko-fi.com/J3J8KWTF">
+    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
+  </a>
+</p>
+
 <div align="center">
-
-## ⭐ Поддержать проект
-
-Если cirrus-tl помог вам, рассмотрите возможность поддержать разработку:
-
-### 📥 Статистика скачиваний
-![Downloads](https://img.shields.io/github/downloads/ваш_username/cirrus-tl/total?style=flat-square&label=Всего%20скачиваний&color=success)
-![Latest Release](https://img.shields.io/github/downloads/ваш_username/cirrus-tl/latest/total?style=flat-square&label=Текущий%20релиз)
-
-### ☕ Купить кофе разработчику
-[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50">](https://buymeacoffee.com/ваш_username)
-
-*Каждая чашка кофе помогает улучшать проект!*
-
+  <i>Если вам нравится этот проект, поддержите его разработку!</i>
 </div>
+
+<br>
