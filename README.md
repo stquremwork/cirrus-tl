@@ -7,8 +7,14 @@
 
 <br><br>
 
-<i>If you like this project, consider supporting its development!</i>
+<img src="https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/total?style=for-the-badge&label=Downloads&color=blue&logo=github" alt="Total Downloads">
+
+<br><br>
+
+<i>If you like this project, consider supporting its development!</i><br>
 <i>Your support helps keep this project alive and updated!</i>
+
+<br><br>
 
 <a href="https://ko-fi.com/J3J8KWTF">
   <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150">
@@ -38,7 +44,25 @@
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=CONFIGURATION" width="450"/>
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Significant-Gravitas/AutoGPT,madushadhanushka/github-readme&type=Date)](https://www.star-history.com/#Significant-Gravitas/AutoGPT&madushadhanushka/github-readme&Date)
+### 📊 Download Statistics
+
+![GitHub Downloads](https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/total?style=flat-square&label=Total%20Downloads&logo=github)
+![Latest Release Downloads](https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/latest/total?style=flat-square&label=Latest%20Release&logo=github)
+
+<picture>
+  <source
+    srcset="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=dark"
+    media="(prefers-color-scheme: dark)"
+  />
+  <source
+    srcset="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=light" 
+    media="(prefers-color-scheme: light)"
+  />
+  <img
+    src="https://api.star-history.com/svg?repos=shell-ninja/hyprconf-install&type=Date&theme=light"
+    alt="Star History Chart"
+  />
+</picture>
 
 *(Инструкция по конфигурации вашего проекта)*
 
