@@ -7,7 +7,7 @@
 
 <br><br>
 
-<img src="https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/total?style=for-the-badge&label=Downloads&color=blue&logo=github" alt="Total Downloads">
+<img src="https://img.shields.io/github/downloads/cirrus-tl/total?style=for-the-badge&label=Downloads&color=blue&logo=github" alt="Total Downloads">
 
 <br><br>
 
