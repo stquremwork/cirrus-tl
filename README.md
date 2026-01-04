@@ -7,7 +7,8 @@
 
 <br><br>
 
-<img src="https://img.shields.io/github/downloads/cirrus-tl/total?style=for-the-badge&label=Downloads&color=blue&logo=github" alt="Total Downloads">
+<!-- НУЖНО ИСПРАВИТЬ: укажите полный путь к репозиторию -->
+<img src="https://img.shields.io/github/downloads/cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ/total?style=for-the-badge&label=Downloads&color=blue&logo=github" alt="Total Downloads">
 
 <br><br>
 
@@ -46,8 +47,9 @@
 
 ### 📊 Download Statistics
 
-![GitHub Downloads](https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/total?style=flat-square&label=Total%20Downloads&logo=github)
-![Latest Release Downloads](https://img.shields.io/github/downloads/shell-ninja/hyprconf-install/latest/total?style=flat-square&label=Latest%20Release&logo=github)
+<!-- НУЖНО ИСПРАВИТЬ: укажите полный путь к репозиторию -->
+![GitHub Downloads](https://img.shields.io/github/downloads/cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ/total?style=flat-square&label=Total%20Downloads&logo=github)
+![Latest Release Downloads](https://img.shields.io/github/downloads/cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ/latest/total?style=flat-square&label=Latest%20Release&logo=github)
 
 *(Инструкция по конфигурации вашего проекта)*
 
@@ -57,19 +59,30 @@
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=PROJECT+STATISTICS" width="450"/>
 
+<div align="center">
+
+<!-- НУЖНО ДОБАВИТЬ: ваша аватарка (замените YOUR_USER_ID) -->
+<img src="https://avatars.githubusercontent.com/u/YOUR_USER_ID?v=4" width="80" style="border-radius: 50%; margin-bottom: 15px; border: 2px solid #9370DB;">
+
+<br>
+
+<!-- НУЖНО ИСПРАВИТЬ: укажите полный путь к репозиторию -->
 <picture>
   <source
-    srcset="https://api.star-history.com/svg?repos=cirrus-tl&type=Date&theme=dark"
+    srcset="https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ&type=Date&theme=dark"
     media="(prefers-color-scheme: dark)"
   />
   <source
-    srcset="https://api.star-history.com/svg?repos=cirrus-tl&type=Date&theme=light" 
+    srcset="https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ&type=Date&theme=light" 
     media="(prefers-color-scheme: light)"
   />
   <img
-    src="https://api.star-history.com/svg?repos=cirrus-tl&type=Date&theme=light"
+    src="https://api.star-history.com/svg?repos=cirrus-tl/НАЗВАНИЕ-РЕПОЗИТОРИЯ&type=Date&theme=light"
     alt="Star History Chart"
+    style="border-radius: 10px;"
   />
 </picture>
+
+</div>
 
 <br>
