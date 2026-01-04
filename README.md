@@ -41,7 +41,3 @@
 *(Инструкция по конфигурации вашего проекта)*
 
 <br>
-
-## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SUPPORT" width="450"/>
-
-<br>
