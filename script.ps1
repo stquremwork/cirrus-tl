@@ -190,7 +190,8 @@ function Unpin-FromTaskbar {
         }
     }
     catch {
-        Write-Host "  ✗ Ошибка при откреплении $DisplayName : $_" -ForegroundColor Red
+        Write-Host "  ✗ Ошибка при откреплении $DisplayName" -ForegroundColor Red -NoNewline
+        Write-Host ": $_" -ForegroundColor Red
         return $false
     }
 }
@@ -394,3 +395,4 @@ do {
     }
 
 } while ($true)
+
