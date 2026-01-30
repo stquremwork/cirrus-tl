@@ -14,13 +14,14 @@ function Confirm-Action {
         $key = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         $response = $key.Character.ToString().ToLower()
         
-        if ($response -eq 'y' -or $response -eq 'н') {
+        # Исправлено: правильная проверка русских букв
+        if ($response -eq 'y' -or $response -eq 'д') {
             Write-Host "`n"
             return $true
         }
-        elseif ($response -eq 'n' -or $response -eq 'т') {
+        elseif ($response -eq 'n' -or $response -eq 'н') {
             Write-Host "`nДействие отменено" -ForegroundColor Yellow
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
             return $false
         }
     } while ($true)
@@ -65,7 +66,7 @@ function Show-Menu {
             }
             return $selectedIndex
         }
-        elseif ($key -eq 81) { # Q key
+        elseif ($key -eq 81 -or $key -eq 27) { # Q key или ESC
             return "exit"
         }
     }
@@ -91,23 +92,33 @@ function Show-ThemeMenu {
         switch ($themeChoice) {
             0 { # Темная тема
                 if (Confirm-Action -Message "Будет включена тёмная тема для системы и приложений.`nТребуется перезапуск Проводника.") {
-                    Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize AppsUseLightTheme 0 -Type DWord -ErrorAction SilentlyContinue
-                    Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize SystemUsesLightTheme 0 -Type DWord -ErrorAction SilentlyContinue
-                    Set-ItemProperty HKCU:\Software\Microsoft\Windows\DWM ColorPrevalence 0 -Type DWord -ErrorAction SilentlyContinue
-                    Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
-                    Write-Host "Тёмная тема включена!" -ForegroundColor Green
-                    Start-Sleep -s 1
+                    try {
+                        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0 -Type DWord -ErrorAction SilentlyContinue
+                        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0 -Type DWord -ErrorAction SilentlyContinue
+                        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "ColorPrevalence" -Value 0 -Type DWord -ErrorAction SilentlyContinue
+                        Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
+                        Write-Host "Тёмная тема включена!" -ForegroundColor Green
+                    }
+                    catch {
+                        Write-Host "Ошибка при настройке темы: $_" -ForegroundColor Red
+                    }
+                    Start-Sleep -Seconds 1
                 }
                 return "back"
             }
             1 { # Светлая тема
                 if (Confirm-Action -Message "Будет включена светлая тема для системы и приложений.`nТребуется перезапуск Проводника.") {
-                    Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize AppsUseLightTheme 1 -Type DWord -ErrorAction SilentlyContinue
-                    Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize SystemUsesLightTheme 1 -Type DWord -ErrorAction SilentlyContinue
-                    Set-ItemProperty HKCU:\Software\Microsoft\Windows\DWM ColorPrevalence 0 -Type DWord -ErrorAction SilentlyContinue
-                    Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
-                    Write-Host "Светлая тема включена!" -ForegroundColor Green
-                    Start-Sleep -s 1
+                    try {
+                        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 1 -Type DWord -ErrorAction SilentlyContinue
+                        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 1 -Type DWord -ErrorAction SilentlyContinue
+                        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "ColorPrevalence" -Value 0 -Type DWord -ErrorAction SilentlyContinue
+                        Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
+                        Write-Host "Светлая тема включена!" -ForegroundColor Green
+                    }
+                    catch {
+                        Write-Host "Ошибка при настройке темы: $_" -ForegroundColor Red
+                    }
+                    Start-Sleep -Seconds 1
                 }
                 return "back"
             }
@@ -133,26 +144,30 @@ function Remove-DesktopShortcuts {
     }
     
     if (Confirm-Action -Message "`nВы уверены, что хотите удалить эти ярлыки?") {
-        # Удаление Edge с рабочего стола
-        Remove-Item -Path "$env:Public\Desktop\Microsoft Edge.lnk" -Force -ErrorAction SilentlyContinue
-        Remove-Item -Path "$env:USERPROFILE\Desktop\Microsoft Edge.lnk" -Force -ErrorAction SilentlyContinue
+        $removedCount = 0
         
-        # Удаление других ярлыков
+        # Удаление ярлыков
         $desktopPaths = @("$env:Public\Desktop", "$env:USERPROFILE\Desktop")
         
         foreach ($desktopPath in $desktopPaths) {
             foreach ($shortcut in $shortcutsToRemove) {
                 $fullPath = Join-Path $desktopPath $shortcut
                 if (Test-Path $fullPath) {
-                    Remove-Item -Path $fullPath -Force -ErrorAction SilentlyContinue
-                    Write-Host "Удалено: $shortcut" -ForegroundColor Green
+                    try {
+                        Remove-Item -Path $fullPath -Force -ErrorAction SilentlyContinue
+                        Write-Host "Удалено: $shortcut" -ForegroundColor Green
+                        $removedCount++
+                    }
+                    catch {
+                        Write-Host "Не удалось удалить $shortcut: $_" -ForegroundColor Yellow
+                    }
                 }
             }
         }
         
-        Write-Host "`nУдаление ярлыков завершено!" -ForegroundColor Green
+        Write-Host "`nУдалено $removedCount ярлыков!" -ForegroundColor Green
     }
-    Start-Sleep -s 1
+    Start-Sleep -Seconds 1
 }
 
 function Unpin-FromTaskbar {
@@ -190,8 +205,8 @@ function Unpin-FromTaskbar {
         }
     }
     catch {
-        Write-Host "  ✗ Ошибка при откреплении $DisplayName" -ForegroundColor Red -NoNewline
-        Write-Host ": $_" -ForegroundColor Red
+        # ИСПРАВЛЕННАЯ СТРОКА: использовано форматирование строки
+        Write-Host ("  ✗ Ошибка при откреплении {0}: {1}" -f $DisplayName, $_) -ForegroundColor Red
         return $false
     }
 }
@@ -227,7 +242,7 @@ function Unpin-AppsFromTaskbar {
         
         Write-Host "`nОткреплено $successCount из $totalCount приложений" -ForegroundColor Green
     }
-    Start-Sleep -s 1
+    Start-Sleep -Seconds 1
 }
 
 $mainMenuItems = @(
@@ -249,20 +264,36 @@ $mainMenuItems = @(
     "Выход"
 )
 
+# Проверка на права администратора
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) {
+    Write-Host "`nВНИМАНИЕ: Для работы некоторых функций требуются права администратора!" -ForegroundColor Red
+    Write-Host "Рекомендуется запустить скрипт от имени администратора.`n" -ForegroundColor Yellow
+    Start-Sleep -Seconds 2
+}
+
+# Основной цикл программы
 do {
     $choice = Show-Menu -Title "Главное меню" -Options $mainMenuItems
     
     if ($choice -eq "exit") {
+        Write-Host "`nЗавершение работы..." -ForegroundColor Yellow
+        Start-Sleep -Seconds 1
         exit
     }
     
     switch ($choice) {
         0 { # Поиск
             if (Confirm-Action -Message "Настройка панели поиска: будет установлен режим 'Иконка и текст'.") {
-                Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 3
-                Write-Host "Панель поиска настроена: Иконка и текст!" -ForegroundColor Green 
+                try {
+                    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 3 -ErrorAction Stop
+                    Write-Host "Панель поиска настроена: Иконка и текст!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при настройке панели поиска: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         1 { # Активация
             Write-Host "`n=== АКТИВАЦИЯ WINDOWS ===" -ForegroundColor Cyan
@@ -272,14 +303,14 @@ do {
             if (Confirm-Action -Message "Вы уверены, что хотите активировать Windows?") {
                 Write-Host "`nЗапуск активации Windows через MAS..." -ForegroundColor Yellow
                 try {
-                    irm https://get.activated.win | iex
+                    Invoke-RestMethod -Uri "https://get.activated.win" | Invoke-Expression
                     Write-Host "Активация завершена!" -ForegroundColor Green
                 }
                 catch {
                     Write-Host "Ошибка при активации: $_" -ForegroundColor Red
                 }
             }
-            Start-Sleep -s 2
+            Start-Sleep -Seconds 2
         }
         2 { # Тема
             $themeResult = Show-ThemeMenu
@@ -289,33 +320,53 @@ do {
         }
         3 { # Расширения
             if (Confirm-Action -Message "Проводник будет настроен на показ расширений файлов (например: .txt, .exe, .jpg).") {
-                reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
-                Write-Host "Расширения файлов теперь показываются!" -ForegroundColor Green 
+                try {
+                    & reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f | Out-Null
+                    Write-Host "Расширения файлов теперь показываются!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при настройке: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         4 { # Этот компьютер
             if (Confirm-Action -Message "Проводник будет открываться в разделе 'Этот компьютер' вместо 'Быстрого доступа'.") {
-                reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v LaunchTo /t REG_DWORD /d 1 /f
-                Write-Host "Проводник теперь открывается в 'Этот компьютер'!" -ForegroundColor Green 
+                try {
+                    & reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v LaunchTo /t REG_DWORD /d 1 /f | Out-Null
+                    Write-Host "Проводник теперь открывается в 'Этот компьютер'!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при настройке: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         5 { # Скрытые папки
             if (Confirm-Action -Message "Будут показаны скрытые файлы и папки, включая защищенные системные файлы.") {
-                reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f
-                reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSuperHidden /t REG_DWORD /d 1 /f
-                Write-Host "Скрытые файлы и папки теперь показываются!" -ForegroundColor Green 
+                try {
+                    & reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f | Out-Null
+                    & reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSuperHidden /t REG_DWORD /d 1 /f | Out-Null
+                    Write-Host "Скрытые файлы и папки теперь показываются!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при настройке: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         6 { # Удалить корзину с рабочего стола
             if (Confirm-Action -Message "Иконка корзины будет удалена с рабочего стола.`nДля применения изменений потребуется перезапуск проводника.") {
-                Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{645FF040-5081-101B-9F08-00AA002F954E}" -Value 1
-                Write-Host "Корзина удалена с рабочего стола!" -ForegroundColor Green
-                Write-Host "Для применения изменений может потребоваться перезапуск проводника" -ForegroundColor Yellow
+                try {
+                    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{645FF040-5081-101B-9F08-00AA002F954E}" -Value 1 -ErrorAction Stop
+                    Write-Host "Корзина удалена с рабочего стола!" -ForegroundColor Green
+                    Write-Host "Для применения изменений может потребоваться перезапуск проводника" -ForegroundColor Yellow
+                }
+                catch {
+                    Write-Host "Ошибка при удалении корзины: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         7 { # Удалить ярлыки с рабочего стола
             Remove-DesktopShortcuts
@@ -325,43 +376,63 @@ do {
         }
         9 { # Производительность
             if (Confirm-Action -Message "Будет добавлена схема электропитания 'Максимальная производительность'.") {
-                powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-                Write-Host "Схема 'Максимальная производительность' добавлена!" -ForegroundColor Green 
+                try {
+                    & powercfg.exe -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 2>$null
+                    Write-Host "Схема 'Максимальная производительность' добавлена!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при добавлении схемы питания: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         10 { # End Task
             if (Confirm-Action -Message "Будет добавлена опция 'Завершить задачу' в контекстное меню панели задач.") {
-                reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings" /v TaskbarEndTask /t REG_DWORD /d 1 /f
-                Write-Host "Опция 'Завершить задачу' включена на панели задач!" -ForegroundColor Green 
+                try {
+                    & reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings" /v TaskbarEndTask /t REG_DWORD /d 1 /f | Out-Null
+                    Write-Host "Опция 'Завершить задачу' включена на панели задач!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при настройке: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         11 { # Больше плиток
             if (Confirm-Action -Message "Количество плиток в меню Пуск будет увеличено.") {
-                Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Start_Layout" -Value 1 -ErrorAction SilentlyContinue
-                Write-Host "Количество плиток в меню Пуск увеличено!" -ForegroundColor Green 
+                try {
+                    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Start_Layout" -Value 1 -ErrorAction SilentlyContinue
+                    Write-Host "Количество плиток в меню Пуск увеличено!" -ForegroundColor Green 
+                }
+                catch {
+                    Write-Host "Ошибка при настройке: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         12 { # Буфер обмена
             if (Confirm-Action -Message "Будет включена история буфера обмена (Win+V).") {
-                if (!(Test-Path "HKCU:\Software\Microsoft\Clipboard")) { 
-                    New-Item -Path "HKCU:\Software\Microsoft\Clipboard" -Force 
+                try {
+                    if (!(Test-Path "HKCU:\Software\Microsoft\Clipboard")) { 
+                        New-Item -Path "HKCU:\Software\Microsoft\Clipboard" -Force | Out-Null
+                    }
+                    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Clipboard" -Name "CloudClipboardAndHistoryEnabled" -Value 1 -ErrorAction Stop
+                    Write-Host "История буфера обмена включена!" -ForegroundColor Green 
                 }
-                Set-ItemProperty -Path "HKCU:\Software\Microsoft\Clipboard" -Name "CloudClipboardAndHistoryEnabled" -Value 1
-                Write-Host "История буфера обмена включена!" -ForegroundColor Green 
+                catch {
+                    Write-Host "Ошибка при настройке буфера обмена: $_" -ForegroundColor Red
+                }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         13 { # Гибернация
             if (Confirm-Action -Message "Будет включена гибернация и добавлена опция в меню питания.`nКоманды:`n1. powercfg /hibernate on - включение гибернации`n2. Редактирование реестра для показа опции в меню") {
                 try {
                     # Включение гибернации
-                    powercfg /hibernate on
+                    & powercfg.exe /hibernate on 2>$null
                     
                     # Добавление опции гибернации в меню питания
-                    reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v ShowHibernateOption /t REG_DWORD /d 1 /f
+                    & reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" /v ShowHibernateOption /t REG_DWORD /d 1 /f 2>$null | Out-Null
                     
                     Write-Host "Гибернация включена и опция добавлена в меню питания!" -ForegroundColor Green
                     Write-Host "Для применения изменений может потребоваться перезагрузка системы" -ForegroundColor Yellow
@@ -370,7 +441,7 @@ do {
                     Write-Host "Ошибка при включении гибернации: $_" -ForegroundColor Red
                 }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         14 { # Рестарт проводника
             Write-Host "`n=== ПЕРЕЗАПУСК ПРОВОДНИКА ===" -ForegroundColor Cyan
@@ -379,20 +450,22 @@ do {
             
             if (Confirm-Action -Message "Вы уверены, что хотите перезапустить Проводник?") {
                 try {
-                    taskkill /f /im explorer.exe
-                    start explorer.exe
+                    Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
+                    Start-Sleep -Seconds 2
+                    Start-Process explorer.exe
                     Write-Host "Проводник перезапущен!" -ForegroundColor Green
                 }
                 catch {
                     Write-Host "Ошибка при перезапуске проводника: $_" -ForegroundColor Red
                 }
             }
-            Start-Sleep -s 1
+            Start-Sleep -Seconds 1
         }
         15 { # Выход
+            Write-Host "`nЗавершение работы..." -ForegroundColor Yellow
+            Start-Sleep -Seconds 1
             exit
         }
     }
 
 } while ($true)
-
