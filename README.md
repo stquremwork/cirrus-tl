@@ -1,8 +1,9 @@
 <div align="center">
 
 <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
-<a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
 <a href="#features"><kbd> <br> Features <br> </kbd></a>&ensp;&ensp;
+<a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
+<a href="#install"><kbd> <br> Config <br> </kbd></a>&ensp;&ensp;
 <a href="https://t.me/+OxKQy7Y6XWxjOTQ9"><kbd> <br> Telegram <br> </kbd></a>
 
 <br><br>
@@ -22,34 +23,16 @@
 
 <br>
 
-<a id="install"></a>
-
-## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=INSTALLATION" width="450"/>
-
-> ### Direct Installation
-> You can now easily install the config directly without cloning the repository. Just copy and paste the command bellow in your terminal and run it. Before that, make sure to install `curl`. Install it using pacman, dnf or zypper.
-
-```
-curl -s https://raw.githubusercontent.com/stquremwork/cirrus-tl/main/script.sh | bash
-```
-
-> ### Manusally Installation
-> - Clone this repository
-> - Make the script executable and run it
-
-```
-git clone https://github.com/stquremwork/cirrus-tl.git
-cd ~/cirrus-tl
-chmod +x script.sh
-./script.sh
-```
-
 
 <a id="screenshots"></a>
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=SCREENSHOTS" width="450"/>
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/3bc526f2-c7fc-4303-b51a-9c1698d55cc3" />
+<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/bd715b72-66e4-45de-91fc-7fdff391fff6" />
+<img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/055716f8-977a-4e34-83d5-0fb4bdf2e08a" />
 
-*(Место для ваших скриншотов)*
+
+
 
 <br>
 
@@ -60,6 +43,23 @@ chmod +x script.sh
 <p> • <code>Applications & Utilities Auto-Install</code></p>
 <p> • <code>System Auto-Configuration</code></p>
 <p> • <code>Full System Setup</code></p>
+
+<br>
+
+<a id="install"></a>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=INSTALLATION" width="450"/>
+
+> ### Direct Installation
+> You can now easily install the config directly without cloning the repository. Just copy and paste the command bellow in your terminal and run it. Before that, make sure to install `curl`. Install it using pacman, dnf or zypper.
+
+```
+irm https://raw.githubusercontent.com/stquremwork/cirrus-tl/main/script.ps1 | iex   
+```
+
+> ### Manusally Installation
+> - Clone this repository
+> - Run script.ps1 with administrator rights
 
 <br>
 
