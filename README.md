@@ -72,8 +72,8 @@ irm https://raw.githubusercontent.com/stquremwork/cirrus-tl/main/script.ps1 | ie
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=PROJECT+STATISTICS" width="435"/>
 
 <div align="center">
-
-[![Stargazers](https://reporoster.com/stars/stquremwork/cirrus-t)](https://www.star-history.com/stquremwork/cirrus-tl)
+  
+[![Stargazers](https://reporoster.com/stars/dark/stquremwork/cirrus-tl)](https://github.com/stquremwork/cirrus-tl/stargazers)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=stquremwork/cirrus-tl&type=Date&theme=dark)](https://www.star-history.com/stquremwork/cirrus-tl)
 
