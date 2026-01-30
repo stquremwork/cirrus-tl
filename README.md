@@ -3,6 +3,7 @@
 <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
 <a href="#features"><kbd> <br> Features <br> </kbd></a>&ensp;&ensp;
 <a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
+<a href="#configuration"><kbd> <br> Configure <br> </kbd></a>&ensp;&ensp;
 
 <br>
 
@@ -61,6 +62,14 @@ irm https://raw.githubusercontent.com/stquremwork/cirrus-tl/main/script.ps1 | ie
 > ### Manusally Installation
 > - Clone this repository
 > - Run script.ps1 with administrator rights
+
+<br>
+
+<a id="configuration"></a>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=9370DB&vCenter=true&width=435&height=25&lines=CONFIGURAION" width="450"/>
+
+> You can edit the script by adding or removing functions as you wish.
 
 <br>
 
