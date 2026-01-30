@@ -4,7 +4,7 @@
 <a href="#features"><kbd> <br> Features <br> </kbd></a>&ensp;&ensp;
 <a href="#install"><kbd> <br> Install <br> </kbd></a>&ensp;&ensp;
 <a href="#configuration"><kbd> <br> Configure <br> </kbd></a>&ensp;&ensp;
-<a href="#configuration"><kbd> <br> Configure <br> </kbd></a>&ensp;&ensp;
+<a href="#configuration"><kbd> <br> Resources <br> </kbd></a>&ensp;&ensp;
 
 <br>
 
