@@ -86,8 +86,6 @@ irm https://raw.githubusercontent.com/stquremwork/cirrus-tl/main/script.ps1 | ie
 
 <div align="center">
   
-[![Stargazers](https://reporoster.com/stars/dark/stquremwork/cirrus-tl)](https://github.com/stquremwork/cirrus-tl/stargazers)
-
 [![Star History Chart](https://api.star-history.com/svg?repos=stquremwork/cirrus-tl&type=Date&theme=dark)](https://www.star-history.com/stquremwork/cirrus-tl)
 
 </div>
